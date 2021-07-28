@@ -12,6 +12,13 @@ body{
 .bg-gradient-1{
     background: linear-gradient(264.99deg,#9f329f -52.92%,#1161fe 95.58%);
 }
+.bg-white{
+    background-color: #ffffff;
+}
+.bg-white li a, .bg-white #logo-i{
+    color: #000!important;
+}
+
 .bg-gradient-2{
     background: linear-gradient(264.99deg,rgba(91,73,205,.9),rgba(17,97,254,.8) 95.58%);
 }
@@ -28,36 +35,36 @@ header{
     color: var(--primary-text-color);
 
 }
-header nav{
+#nav{
     position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-around;
     width: 100%;
-    padding: 25px 0;
+    padding: 20px 0;
     z-index: 10;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     transition: .4s;
 }
-header .logo img{
-    width: 40px;
-}
-header nav li{
+#nav li{
     list-style-type: none;
     display: flex;
     align-items: center;
 }
-.bg-gradient-1 a, .bg-gradient-1 .logo{
-    color: var(--primary-text-color);
-}
-header nav li a{
+#nav li a{
     padding: 0 30px;
     text-decoration: none;
     color: #000;
-    font-size: .8em;
+    font-size: .9em;
     font-weight: 600;
 }
-header nav .logo{
-    color: #000;
+#nav li a, #logo-i{
+    color: #fff;
+}
+
+header .logo img{
+    width: 40px;
 }
 .presentation{
     width: 100%;
@@ -68,18 +75,19 @@ header nav .logo{
 }
 .header-logo{
     width: auto;
+    z-index: 10;
 }
 .header-logo img{
     width: 100%;
 }
 .header-title{
-    font-size: 2.5em;
+    font-size: 2.5rem;
     padding: 0;
     margin: 0;
     font-weight: bold;
 }
 .header-subtitle{
-    font-size: 1.2em;
+    font-size: 2em;
     margin: 0;
 }
 .contact{
@@ -145,15 +153,17 @@ header nav .logo{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: auto;
 }
-.card{
+.card-whoami{
+    align-self: center; 
+
     padding: 10px;
-    width: 30%;
-    margin: 30px 20px;
-    
+    box-sizing: border-box;    
     background-color: transparent;
     box-shadow: transparent;
     border: none;
+    transition: border .4s;
 }
 .card-img{
     height: 150px;
@@ -182,29 +192,74 @@ header nav .logo{
 .aboutme-card{
     position: absolute;
     top: -60px;
-    width: 60%;
-    height: 700px;
+    min-height: 95%;
+    max-height: 95%;
     background-color: var(--primary-text-color);
     padding: 60px 50px;
     box-sizing: border-box;
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
 }
 .projects{
+    position: relative;
     width: 100%;
     min-height: 800px;
     display: flex;
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
-    padding: 200px 50px 50px 50px;
+    padding: 100px 50px 200px 50px;
     box-sizing: border-box;
-    background-color: #000000;
+    /* background-color: #000000; */
+    padding-bottom: 300px;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
-
-
+.project-card{
+    background-color: white;
+    width: 100%;
+    height: 500px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 50px 0;
+}
+.project-card .project-img{
+    background-color: red;
+    padding: 0;
+}
+.project-card .project-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.project-card .project-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+}
+.project-card .project-body span{
+    font-size: .8em;
+    color: gray;
+}
+.project-line{
+    width: 20%;
+    height: 3px;
+    background-color: #3E3E3E;
+    border-radius: 5px;
+    margin: 30px 0;
+}
+.bottom-image{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
 .social-section {
     margin: 50px 0;
 }
-
 .social-icon {
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
@@ -246,4 +301,15 @@ header nav .logo{
     background: linear-gradient(264.99deg,#9f329f -52.92%,#1161fe 95.58%);
     -webkit-background-clip: text;
 
+}
+
+.underline{
+    border-bottom: 4px solid #FF4C85;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
 }
